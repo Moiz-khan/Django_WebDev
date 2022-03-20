@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset="UTF-8">
+    <title>HMS</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> Free Dental Medical Hospital Website Template | Smarteyeapps.com</title>
+
+    <link rel="shortcut icon" href="assets/images/fav.jpg">
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="assets/css/fontawsom-all.min.css">
+    <link rel="stylesheet" href="assets/plugins/slider/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/plugins/slider/css/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        /* table, th, td {
+            border: 1px solid blueviolet;
+            padding: 15px;
+            background-color: aqua;
+        } */
+        
+        .button {
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            padding: 7px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 10px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+            font-size: 20px;
+        }
+        
+        .buttons {
+            background-color: white;
+            color: black;
+            border: 2px solid #008CBA;
+        }
+        
+        .buttons:hover {
+            background-color: #008CBA;
+            color: white;
+        }
+        
+        .navbar .nav-link {
+            font-size: 14px;
+            text-transform: uppercase;
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+        }
+        
+        .navbar .nav-item.active {
+            border-left: #444 3px solid;
+        }
+        
+        .ml-auto {
+            margin-left: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                HOSPITAL MANAGEMENT SYSTEM
+            </a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+
+                    <li class="nav-item active">
+                        <a href="/hospital/" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/hospital/views/" class="nav-link">View</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/hospital/updatingInfo/" class="nav-link">Update</a>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="loginbox container mt-3">
+        <form action="/hospital/Home/" method="POST"> {% csrf_token %}
+            <!-- <img src = "logImage.png" class = "logImage"> -->
+            <!-- <h1> Login Here </h1> -->
+            <table class="table">
+                <tr class="table-secondary">
+                    <td> Patient Name </td>
+                    <td>
+                        <input type="text" name="patientName" class="form-control" placeholder="Enter Patient Name">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Phone No </td>
+                    <td>
+                        <input type="text" name="phoneNo" class="form-control" placeholder="Enter Phone no">
+                    </td>
+                </tr>
+                <tr class="table-secondary">
+                    <td>Doctor:</td>
+                    <td>
+                        <select name="docName" class="form-select">
+                        <option selected disabled>Select Doctor:</option>
+                        <option value="Dr.Ishaq Daar">Dr.Ishaq Daar</option>
+                        <option value="Dr.Adeeb Rizvi">Dr.Adeeb Rizvi</option>
+                        <option value="Dr.Ashfaq Hussain">Dr.Ashfaq Hussain</option>
+                        <option value="Dr.Nadeem Ahmed">Dr.Nadeem Ahmed</option>
+                        <option value="Dr.Saghir Ahmed">Dr.Saghir Ahmed</option>
+                        <option value="Dr.Ramesh Kuumar">Dr.Ramesh Kuumar</option>
+                  
+                </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Specialist:</td>
+                    <td><select name="specialist" class="form-select">
+                      <option selected="selected" disabled>Select specilaist:</option>
+                      <option value="Dental Surgeon">Dental Surgeon</option>
+                      <option value="Kidney Surgeon">Kidney Surgeon</option>
+                      <option value="Neuro Surgeon">Neuro Surgeon</option>
+                      <option value="Bone Surgeon">Bone Surgeon</option>
+                      <option value="ENT Surgeon">ENT Surgeon</option>
+                      <option value="Heart Surgeon">Heart Surgeon</option>
+                      
+                    </select></td>
+                </tr>
+
+                <tr class="table-secondary">
+                    <td>Day:</td>
+                    <td><select name="day" class="form-select">
+                      <option selected="selected" disabled>Select Day:</option>
+                      <option value="Monday">Monday</option>
+                      <option value="Tuesday">Tuesday</option>
+                      <option value="Wednesday">Wednesday</option>
+                      <option value="Thursday">Thursday</option>
+                      <option value="Friday">Friday</option>
+                      <option value="Saturday">Saturday</option>
+                      <option value="Sunday">Sunday</option>
+                    </select></td>
+                </tr>
+
+                <tr>
+                    <td>Time:</td>
+                    <td><select name="Time" class="form-select">
+                      <option selected="selected" disabled>Select Time:</option>
+                      <option value="09:00:00">09:00:00</option>
+                      <option value="10:00:00">10:00:00</option>
+                      <option value="01:00:00">01:00:00</option>
+                      <option value="03:00:00">03:00:00</option>
+                      <option value="06:00:00">06:00:00</option>
+                      <option value="07:00:00">07:00:00</option>
+                    </select></td>
+                </tr>
+                <tr class="table-secondary">
+                    <td>AM/PM:</td>
+                    <td><select name="AM_PM" class="form-select">
+                        <option selected="selected" disabled>Select AM/PM:</option>
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                        
+                      </select></td>
+                </tr>
+
+                <tr>
+                    <td> Fees </td>
+                    <td>
+                        <input type="text" name="fees" class="form-control" placeholder="Select Fees">
+                    </td>
+                </tr>
+
+                <tr class="table-secondary">
+                    <td> Token No </td>
+                    <td>
+                        <!-- Enable selection -->
+                        <input type="text" name="token" class="form-control" placeholder="Enter Token no">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>&nbsp;</td>
+                    <td class="d-grid gap-2">
+                        <button type="submit" class="btn btn-lg btn-outline-primary">Submit form</button>
+                    </td>
+                </tr>
+
+
+            </table>
+        </form>
+    </div>
+</body>
+
+</html>

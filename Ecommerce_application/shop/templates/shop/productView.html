@@ -1,0 +1,51 @@
+{%extends 'shop/basic.html' %} {% block title %} {{product.prod_name}} {% endblock %} {% block body %}
+<div class="container my-4">
+    <div class='row'>
+        <div class='col-md-4'>
+            <div class="row">
+                <img src="/media/{{product.img}}" width="233px" height="">
+            </div>
+
+            <div class="row my-5">
+                <button class="btn btn-primary mx-3">Buy</button>
+                <button class="btn btn-primary">Add to cart</button>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <h4>{{product.prod_name}}</h4>
+            <h5>Rs: {{product.price}}</h5>
+            <p>{{product.desc}}. A shoe is an item of footwear intended to protect and comfort the human foot. Shoes are also used as an item of decoration and fashion. The design of shoes has varied enormously through time and from culture to culture, with
+                appearance originally being tied to function.</p>
+        </div>
+    </div>
+</div>
+{% endblock %} {% block js %}
+<script>
+    if (localStorage.getItem('cart') == null) {
+        var cart = {};
+    } else {
+        cart = JSON.parse(localStorage.getItem('cart'));
+        document.getElementById('cart').innerHTML = Object.keys(cart).length;
+    }
+
+    $('.cart').click(function() {
+        console.log('clicked');
+        var IdStr = this.id.toString();
+
+        if (cart[IdStr] != undefined) {
+            cart[IdStr] = cart[IdStr] + 1;
+        } else {
+            cart[IdStr] = 1;
+
+        }
+        console.log(cart)
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+    });
+
+    $('#popcart').popover();
+    document.getElementById("popcart").setAttribute('data-content', '<h5>Cart for your items in my shopping cart</h5>');
+</script>
+
+{% endblock %}

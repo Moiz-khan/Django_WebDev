@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Views</title>
+
+    <style>
+        td {
+            border: 1px solid black;
+            padding: 15px;
+            background-color: aqua;
+        }
+        
+        h1 {
+            font-family: "Arial";
+        }
+        
+        .head {
+            background-color: #302f2b;
+            color: white;
+        }
+        
+        .tl {
+            background-color: #302f2b;
+        }
+        
+        .tl input[type="submit"]:hover {
+            cursor: pointer;
+            background: red;
+            color: #000;
+        }
+        
+        .button {
+            background-color: #4CAF50;
+            /* Green */
+            border: none;
+            color: white;
+            padding: 7px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 10px;
+            margin: 4px 2px;
+            transition-duration: 0.4s;
+            cursor: pointer;
+        }
+        
+        .button2 {
+            background-color: white;
+            color: black;
+            border: 2px solid #008CBA;
+        }
+        
+        .button2:hover {
+            background-color: #008CBA;
+            color: white;
+        }
+        
+        .button3 {
+            background-color: white;
+            color: black;
+            border: 2px solid red;
+        }
+        
+        .button3:hover {
+            background-color: red;
+            color: white;
+        }
+        
+        .button4 {
+            background-color: white;
+            color: black;
+            border: 2px solid greenyellow;
+        }
+        
+        .button4:hover {
+            background-color: greenyellow;
+            color: white;
+        }
+        
+        tr:hover {
+            background-color: white;
+            color: #3399ff;
+        }
+        
+        .ml-auto {
+            margin-left: auto;
+        }
+        
+        .display-inline {
+            display: flex;
+            justify-content: space-evenly;
+        }
+        
+        .navbar .nav-link {
+            font-size: 14px;
+            text-transform: uppercase;
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+        }
+        
+        .navbar .nav-item.active {
+            border-left: #444 3px solid;
+        }
+        
+        h1 {
+            padding: 15px;
+        }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                HOSPITAL MANAGEMENT SYSTEM
+            </a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a href="/hospital/" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/hospital/views/" class="nav-link">View</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/hospital/updatingInfo/" class="nav-link">Update</a>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Patient Data</h1>
+
+        <br>
+        <table class='table'>
+            <thead>
+                <tr class='head'>
+                    <th scope="col">AID</th>
+                    <th scope="col">PatientName</th>
+                    <th scope="col">Phone No</th>
+                    <th scope="col">Doctor Name</th>
+                    <th scope="col">Specialist</th>
+                    <th scope="col">Day</th>
+                    <th scope="col">Time</th>
+                    <th scope="col">AM/PM</th>
+                    <th scope="col">Fees</th>
+                    <th scope="col">Token No</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                {% for data in patientData %}
+                <tr>
+                    <td scope="row">{{data.aid_db}}</td>
+                    <td>{{data.patientName_db}}</td>
+                    <td>0{{data.phoneNo_db}}</td>
+                    <td>{{data.doctorName}}</td>
+                    <td>{{data.specialist_db}}</td>
+                    <td>{{data.day_db}}</td>
+                    <td>{{data.time_db}}</td>
+                    <td>{{data.AM_PM_db}}</td>
+                    <td>{{data.fees_db}}</td>
+                    <td>{{data.tokenNo_db}}</td>
+                </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div>
+            <form action="/hospital/views/" method="POST" class="row g-3"> {% csrf_token %}
+                <table class='table'>
+                    <tr>
+                        <td> Search by Patient Name </td>
+                        <td class=" display-inline ">
+                            <input type="text " name="patientName" placeholder="Enter Patient Name " class="form-control ">
+                            <div>&nbsp; &nbsp;</div>
+                            <button type="submit " class="btn btn-outline-primary btn-lg ">Search</button>
+                        </td>
+                    </tr>
+
+                    <!-- <tr>
+                        <td> Search by Phone No </td>
+                        <td class="display-inline ">
+                            <input type="text " name="phoneNo" placeholder="Enter Phone no" class="form-control ">
+                            <div>&nbsp; &nbsp;</div>
+                            <button type="submit " class="btn btn-outline-warning btn-lg ">Search</button>
+                        </td>
+                    </tr>
+                     -->
+                    <tr>
+                        <td> Delete by AID </td>
+                        <td class="display-inline ">
+                            <input type="text " name="AID" placeholder="Enter AID" class="form-control ">
+                            <div>&nbsp; &nbsp;</div>
+                            <button type="submit " class="btn btn-outline-danger btn-lg ">Delete</button>
+                        </td>
+                    </tr>
+
+                </table>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>

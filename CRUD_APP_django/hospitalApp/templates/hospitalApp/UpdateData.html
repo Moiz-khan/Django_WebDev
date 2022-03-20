@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Update</title>
+    <style>
+        .ml-auto {
+            margin-left: auto;
+        }
+        
+        .navbar .nav-link {
+            font-size: 14px;
+            text-transform: uppercase;
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+        }
+        
+        .navbar .nav-item.active {
+            border-left: #444 3px solid;
+        }
+        
+        .a-tag a {
+            text-decoration: none;
+        }
+        
+        td.a-tag button a:hover,
+        td.a-tag button a:active {
+            color: #FFF !important;
+        }
+    </style>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container">
+            <a href="index.html" class="navbar-brand">
+                HOSPITAL MANAGEMENT SYSTEM
+            </a>
+            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a href="/hospital/" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/hospital/views/" class="nav-link">View</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/hospital/updatingInfo/" class="nav-link">Update</a>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container mt-3">
+        <table class="table">
+            <tr class="head">
+                <th>AID</th>
+                <th>Patient Name</th>
+                <th>&nbsp;</th>
+            </tr>
+            {% for displayRecord in results %}
+            <tr>
+                <td>{{displayRecord.aid_db}}</td>
+                <td>{{displayRecord.patientName_db}}</td>
+
+                <td class="a-tag"><button class="btn btn-outline-primary"><a href="/hospital/edit/{{displayRecord.aid_db}}">Update</a></button></td>
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+
+<!-- 
+<body>
+    <center>
+    <h1 class="update">Update Patient Record</h1>
+ 
+    <div>
+    
+        <form action="/hospital/update/" method="POST"> {% csrf_token %}
+
+            <table>
+                
+                <tr>
+                    <td> AID </td>
+                    <td> 
+                        <input type="text" name= "AID" placeholder= "Enter AID" >
+                        <button type="submit" class="button buttons">show</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Patient Name </td>
+                    <td> 
+                        <input type="text" name= "patientName" placeholder= "Enter Patient Name" >
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Phone No </td>
+                    <td> 
+                        <input type="text" name= "phoneNo" placeholder= "Enter Phone no">
+                    </td>
+                </tr>
+                
+                <tr>
+                
+                  <td>Doctor Name</td>
+                  <td>
+                  <input type="text" name= "docName" placeholder= "Enter Doctor Name" >
+                  </td>
+                  
+                </tr>
+
+                <tr>
+                    <td>specialist</td>
+                  <td>
+                  <input type="text" name= "specialist" placeholder= "Enter specialist" >
+                  </td>
+                    
+                </tr>
+
+                <tr>
+                    <td>Day:</td>
+                    <td>
+                        <input type="text" name= "day" placeholder= "Enter Day" >
+                    </td>
+                    
+                </tr>
+
+                <tr>
+                    <td>Time:</td>
+                    <td>
+                        <input type="text" name= "Time" placeholder= "Enter Time" >
+                    </td>
+                    
+                </tr>
+                <tr>
+                    <td>AM/PM:</td>
+                    <td>
+                        <input type="text" name= "AM_PM" placeholder= "Enter am/pm" >
+                    </td>
+                     
+                </tr>
+
+                <tr>
+                    <td> Fees </td>
+                    <td> 
+                        <input type="text" name= "fees" placeholder= "Select Fees">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> Token No </td>
+                    <td> 
+                        <input type="text" name= "token" placeholder= "Enter Token no">
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Submit: </td>
+                    <td>
+                      <button type="submit" class="button buttons">Update</button>
+                    </td>
+                  </tr>
+                  
+            </table>
+           
+        </form>
+        </div>
+    </center>
+
+</body> -->
+
+</html>
