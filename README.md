@@ -1,160 +1,110 @@
 # Django Web Development Projects
 
-A collection of Django applications demonstrating full-stack web development, CRUD operations, machine learning integration, and e-commerce development.
-
----
+A collection of three Django applications built to strengthen backend development skills through hands-on projects. The repository demonstrates CRUD operations, data visualization, and e-commerce development using Django's MVT architecture.
 
 ## Projects
 
-### 1. Hospital Management System
+### 1. CRUD_APP_django
 
-A Django CRUD application for managing hospital information.
+A Hospital Management System built with Django to practice CRUD (Create, Read, Update, Delete) operations.
 
-**Features**
-
-- Patient management
-- Hospital administration
-- CRUD operations
+**Highlights**
 - Django ORM
+- Function-based/Class-based Django views
 - Template rendering
 - SQLite database
+- Django Admin integration
 
-**Technologies**
-
-- Django
-- Python
-- HTML
-- CSS
-- SQLite
+**Focus:** Backend fundamentals, database operations, and form handling.
 
 ---
 
-### 2. COVID-19 Machine Learning Dashboard
+### 2. DjangoML_covid_Dashboard
 
-A Django dashboard integrating machine learning for COVID-19 data visualization and prediction.
+A Django dashboard for visualizing COVID-19 datasets.
 
-**Features**
-
-- Dataset visualization
-- Machine learning integration
+**Highlights**
+- CSV dataset processing
 - Interactive dashboard
-- Data analysis
-- Django backend
+- Data visualization
+- Django templates
+- Machine learning/data analysis concepts
 
-**Technologies**
-
-- Django
-- Python
-- Machine Learning
-- Pandas
-- NumPy
-- HTML
-- CSS
-- JavaScript
+**Focus:** Integrating data analysis workflows into a Django application.
 
 ---
 
-### 3. E-commerce Application
+### 3. Ecommerce_application
 
-A complete Django-based e-commerce application.
+A Django e-commerce application implementing the core components of an online shopping platform.
 
-**Features**
+**Highlights**
+- Product management
+- Shopping workflow
+- Media handling
+- Django Admin
+- Modular application structure
 
-- Product catalog
-- Shopping cart
-- Order management
-- User authentication
-- Admin dashboard
-- Media uploads
+**Focus:** Building scalable backend applications with Django.
 
-**Technologies**
+---
 
-- Django
+## Tech Stack
+
 - Python
+- Django
 - SQLite
-- HTML
-- CSS
+- HTML5
+- CSS3
 - JavaScript
 
----
-
-## Skills Demonstrated
-
-- Django Framework
-- Django ORM
-- CRUD Operations
-- Authentication
-- MVC (MVT) Architecture
-- Machine Learning Integration
-- Database Design
-- Responsive Frontend Development
-
----
-
-## Getting Started
-
-Clone the repository
+## Setup
 
 ```bash
 git clone https://github.com/Moiz-khan/Django_WebDev.git
-cd Django_WebDev
-```
 
-Create a virtual environment
+cd Django_WebDev/<project-folder>
 
-```bash
 python -m venv venv
-```
 
-Activate it
-
-Windows
-
-```bash
+# Windows
 venv\Scripts\activate
-```
 
-Linux/macOS
-
-```bash
+# Linux/macOS
 source venv/bin/activate
-```
 
-Install dependencies
-
-```bash
 pip install -r requirements.txt
-```
 
-Run migrations
-
-```bash
 python manage.py migrate
-```
 
-Start the server
-
-```bash
 python manage.py runserver
 ```
 
----
+## Testing
+
+Run the Django test suite:
+
+```bash
+python manage.py test
+```
 
 ## Repository Structure
 
 ```
 Django_WebDev/
-│
 ├── CRUD_APP_django/
 ├── DjangoML_covid_Dashboard/
 ├── Ecommerce_application/
 └── README.md
 ```
 
----
+## Skills Demonstrated
 
-## Author
-
-**Moiz Khan**
-
-GitHub: https://github.com/Moiz-khan
+- Django Framework
+- Django ORM
+- CRUD Operations
+- Template Rendering
+- SQLite
+- MVC/MVT Architecture
+- Data Visualization
+- Backend Development
